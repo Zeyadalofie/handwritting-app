@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import DragAndDrop from './DragAndDrop';
+import ThreeJSDisplay from './three';
 
-function App() {
+const App = () => {
+  const [image, setImage] = useState(null);
+
+  const handleImageUpload = (img) => {
+    setImage(img);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Handwriting Recognition</h1>
+      <DragAndDrop onImageUpload={handleImageUpload} />
+      {image && <ThreeJSDisplay image={image} />}
     </div>
   );
-}
+};
 
 export default App;
