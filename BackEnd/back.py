@@ -16,7 +16,7 @@ def upload_image():
     img = Image.open(file.stream)
 
 
-    model = load_model('./TheGoodHW_version/HandWriting_model.h5')
+    model = load_model('E:/Project/HandWritting/TheGoodHW_Version/HandWriting_model.h5')
     prediction = model.predict(img)
 
 
